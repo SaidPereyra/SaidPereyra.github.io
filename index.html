@@ -1,684 +1,1077 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es-MX">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#073a1f" />
 
-    <title>Estética Maribella</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+  <title>Crédito rápido | $1,000 a $10,000 en 12 semanas</title>
+  <meta
+    name="description"
+    content="Solicita tu crédito de $1,000 a $10,000 y paga en 12 semanas. Proceso simple. Respuesta rápida. Atención por WhatsApp."
+  />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.ico" rel="icon" />
-    <link href="assets/img/favicon.ico" rel="apple-touch-icon" />
+  <meta property="og:title" content="Crédito rápido | $1,000 a $10,000 en 12 semanas" />
+  <meta property="og:description" content="Proceso simple, respuesta rápida. Solicita hoy." />
+  <meta property="og:type" content="website" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet" />
+  <style>
+    :root{
+      /* NUEVA PALETA */
+      --brand: #073a1f;   /* principal */
+      --brand-2: #0a4a28; /* soporte (ligeramente más claro) */
+      --brand-3: #0f5f33; /* soporte */
+      --accent: #ecca6e;  /* dorado */
+      --accent-2: #f3df9f;/* dorado claro para fondos */
+      --text:#0b1220;
+      --muted:#51606b;
+      --card:#ffffff;
+      --bg:#ffffff;       /* blanco */
+      --ring: rgba(7,58,31,.22);
+      --shadow: 0 18px 55px rgba(2,25,10,.12);
+      --shadow2: 0 10px 25px rgba(2,25,10,.10);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+      /* neutrales suaves */
+      --line: rgba(7,58,31,.12);
+      --soft: rgba(7,58,31,.06);
+      --soft2: rgba(236,202,110,.14);
+    }
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
 
-    <!-- SMTP Library-->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 380px at 10% -10%, rgba(7,58,31,.14), transparent 55%),
+        radial-gradient(720px 420px at 90% 0%, rgba(236,202,110,.18), transparent 52%),
+        var(--bg);
+      overflow-x:hidden;
+    }
 
-    <!-- Configuration-->
-    <script src="forms/contact.js"></script>
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:100%; max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    <!-- =======================================================
-  * Template Name: Laura - v2.2.1
-  * Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      height:68px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .brand small{
+      display:block; font-weight:600; color:var(--muted); margin-top:2px;
+      letter-spacing:0;
+    }
+    .navlinks{ display:none; gap:18px; color:var(--muted); font-weight:650; }
+    .navlinks a{ padding:10px 10px; border-radius:12px; }
+    .navlinks a:hover{
+      background: var(--soft2);
+      color: var(--brand);
+    }
+
+    .actions{ display:flex; align-items:center; gap:10px; }
+
+    .btn{
+      appearance:none; border:0; cursor:pointer;
+      border-radius:999px;
+      padding:12px 16px;
+      font-weight:800;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      user-select:none; white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    /* BOTÓN PRINCIPAL: verde con pequeño toque dorado */
+    .btn-primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#fff;
+      box-shadow: 0 14px 30px rgba(7,58,31,.22);
+      position:relative;
+    }
+    .btn-primary::after{
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:999px;
+      pointer-events:none;
+      box-shadow: inset 0 0 0 1px rgba(236,202,110,.28);
+      opacity:.9;
+    }
+    .btn-primary:hover{
+      box-shadow: 0 18px 40px rgba(7,58,31,.26);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost{
+      background:#fff;
+      color: var(--brand);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow2);
+    }
+    .btn-ghost:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+
+    /* Logo image */
+    .brand-logo{
+      width: 200px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(7,58,31,.16);
+      border: 1px solid var(--line);
+      background:#fff;
+    }
+
+    /* Hero */
+    .hero{ padding:34px 0 18px; position:relative; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .hero-left{ padding:18px 0 0; }
+
+    /* BADGE: dorado suave + texto verde */
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      background: rgba(236,202,110,.18);
+      border:1px solid rgba(236,202,110,.40);
+      color: var(--brand);
+      font-weight:900;
+      width:fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 7px rgba(236,202,110,.22);
+      animation: pulse 1.7s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ transform:scale(1); opacity:1; }
+      50%{ transform:scale(1.12); opacity:.8; }
+    }
+
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 4.4vw, 52px);
+      line-height:1.05;
+      letter-spacing:-.7px;
+    }
+    /* Toque dorado sutil en lo más importante del H1 */
+    h1 .accent{
+      background: linear-gradient(90deg, var(--accent), #d8b24c);
+      -webkit-background-clip: text;
+      background-clip:text;
+      color: transparent;
+      font-weight: 950;
+    }
+
+    .lead{
+      color:var(--muted);
+      font-size: clamp(15px, 1.7vw, 18px);
+      line-height:1.55;
+      margin:0 0 18px;
+      max-width: 58ch;
+    }
+    .hero-ctas{ display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 14px; }
+    .hero-note{
+      display:flex; flex-wrap:wrap; gap:10px;
+      color:var(--muted);
+      font-weight:650;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow2);
+    }
+
+    /* Card */
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(240px 180px at 20% 0%, rgba(7,58,31,.12), transparent 70%),
+        radial-gradient(240px 180px at 90% 30%, rgba(236,202,110,.16), transparent 70%);
+      pointer-events:none;
+    }
+    .card > *{ position:relative; }
+    .card h3{ margin:6px 0 2px; font-size:18px; letter-spacing:-.2px; color: var(--brand); }
+    .card p{ margin:0 0 12px; color:var(--muted); line-height:1.45; }
+
+    .calc{ display:grid; gap:12px; }
+    .row{ display:grid; gap:8px; }
+    label{
+      font-weight:900;
+      color: var(--brand);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .value{
+      font-variant-numeric: tabular-nums;
+      font-weight:950;
+      background: rgba(236,202,110,.18);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(236,202,110,.40);
+      color: var(--brand);
+    }
+
+    input[type="range"]{ width:100%; accent-color: var(--brand); }
+
+    .summary{
+      display:grid; gap:8px;
+      padding:14px;
+      border-radius: var(--radius);
+      background: rgba(7,58,31,.06);
+      border:1px solid var(--line);
+    }
+    .kpi{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:10px;
+      padding:10px 10px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(2, 25, 10, .06);
+    }
+    .kpi b{ font-size:14px; color:var(--muted); }
+    .kpi span{
+      font-weight:950;
+      font-variant-numeric: tabular-nums;
+      letter-spacing:-.2px;
+      color: var(--brand);
+    }
+    .legal{
+      font-size:12px;
+      color:rgba(81,96,107,.95);
+      line-height:1.45;
+    }
+
+    /* Sections */
+    section{ padding: 26px 0; }
+    .section-title{
+      margin-bottom: 14px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      flex-wrap:wrap;
+    }
+    .section-title h2{
+      margin:0;
+      letter-spacing:-.5px;
+      font-size: clamp(22px, 2.4vw, 30px);
+      color: var(--brand);
+    }
+    .section-title h2 .accent{
+      color: var(--accent);
+      text-shadow: 0 1px 0 rgba(0,0,0,.04);
+    }
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+      max-width: 70ch;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .feature{
+      padding:16px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: var(--shadow2);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .feature:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+    .icon{
+      width:42px; height:42px; border-radius:16px;
+      display:grid; place-items:center;
+      background: rgba(236,202,110,.18);
+      border:1px solid rgba(236,202,110,.35);
+      margin-bottom:10px;
+    }
+    .feature h4{ margin:0 0 6px; color: var(--brand); }
+    .feature p{ margin:0; color:var(--muted); line-height:1.5; }
+
+    .steps{ display:grid; gap:10px; }
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:14px;
+      box-shadow: var(--shadow2);
+    }
+    .num{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#fff; font-weight:950;
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+      box-shadow: 0 12px 25px rgba(7,58,31,.22);
+      position:relative;
+    }
+    .num::after{
+      content:"";
+      position:absolute; inset:1px;
+      border-radius: 13px;
+      box-shadow: inset 0 0 0 1px rgba(236,202,110,.28);
+      pointer-events:none;
+    }
+
+    /* Pay grid/table */
+    .pay-grid{ display:grid; grid-template-columns: 1fr; gap:12px; }
+    .pay-img-wrap{
+      display:block;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow2);
+      background:#fff;
+    }
+    .pay-img{
+      width:100%;
+      height:auto;
+      display:block;
+      transform: scale(1);
+      transition: transform .25s ease;
+    }
+    .pay-img-wrap:hover .pay-img{ transform: scale(1.02); }
+
+    .pay-table-wrap{
+      overflow:auto;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow2);
+    }
+    .pay-table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      background:#fff;
+    }
+    .pay-table th, .pay-table td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-weight:850;
+    }
+    .pay-table th{
+      position: sticky;
+      top: 0;
+      background: rgba(236,202,110,.16);
+      backdrop-filter: blur(6px);
+      color: var(--brand);
+      font-weight:900;
+    }
+    .pay-table td{ font-weight:850; }
+    .pay-table tr.active{
+      outline: 3px solid rgba(236,202,110,.40);
+      background: rgba(236,202,110,.14);
+    }
+
+    /* FAQ (animated open/close) */
+    .faq{ display:grid; gap:10px; }
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding: 0;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--brand);
+      list-style:none;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 12px 14px;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .chev{ transition: transform .18s ease; color: var(--accent); }
+    details[open] .chev{ transform: rotate(180deg); }
+
+    .faq-content{
+      padding: 0 14px 12px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+    .faq-anim{
+      height: 0;
+      overflow:hidden;
+      transition: height .28s ease;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid; gap:12px;
+      grid-template-columns: 1fr;
+      align-items:stretch;
+    }
+    .field{ display:grid; gap:6px; }
+
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(7,58,31,.18);
+      outline:none;
+      background:#fff;
+      font-weight:650;
+      transition: box-shadow .15s ease, border-color .15s ease;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(236,202,110,.70);
+      box-shadow: 0 0 0 6px rgba(236,202,110,.22);
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%) translateY(20px);
+      opacity:0;
+      background:#0b1220;
+      color:#fff;
+      padding:12px 14px;
+      border-radius: 14px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.22);
+      z-index: 90;
+      transition: opacity .2s ease, transform .2s ease;
+      max-width: calc(100% - 26px);
+      text-align:center;
+      font-weight:700;
+    }
+    .toast.show{ opacity:1; transform: translateX(-50%) translateY(0); }
+
+    /* Reveal */
+    .reveal{
+      opacity:0;
+      transform: translateY(14px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer{ padding: 24px 0 34px; color:var(--muted); font-size: 13px; }
+    .footer-grid{
+      display:grid; gap:10px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+    .footer-grid b{ color: var(--brand); }
+
+    /* Floating WhatsApp */
+    .fab{ position: fixed; right: 16px; bottom: 16px; z-index: 80; }
+
+    html{ scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce){
+      html { scroll-behavior: auto; }
+      .reveal{ transition:none !important; }
+      .faq-anim{ transition:none !important; }
+    }
+    section, header[id]{ scroll-margin-top: 86px; }
+
+    @keyframes targetFlash{
+      0%   { box-shadow: 0 0 0 0 rgba(236,202,110,0); transform: translateY(0); }
+      30%  { box-shadow: 0 0 0 10px rgba(236,202,110,.22); transform: translateY(-1px); }
+      100% { box-shadow: 0 0 0 0 rgba(236,202,110,0); transform: translateY(0); }
+    }
+    .target-flash{ animation: targetFlash .7s ease-out; border-radius: var(--radius2); }
+
+    @media (min-width: 900px){
+      .navlinks{ display:flex; }
+      .hero-grid{ grid-template-columns: 1.15fr .85fr; gap:22px; }
+      .grid3{ grid-template-columns: repeat(3, 1fr); }
+      .contact{ grid-template-columns: 1fr 1fr; }
+      .hero{ padding: 44px 0 18px; }
+      .pay-grid{ grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
-        <nav class="nav-menu d-none d-lg-block">
-            <ul>
-                <li class="active"><a href="#hero">Inicio</a></li>
-                <li><a href="#about">Sobre mi</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#portfolio">Portafolio</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#inicio" aria-label="Inicio">
+          <img class="brand-logo" src="assets/img/logo.jpg" alt="Zeffata Financiera" />
+        </a>
+
+        <nav class="navlinks" aria-label="Navegación principal">
+          <a href="#pagos">Pagos</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#preguntas">FAQ</a>
+          <a href="#contacto">Contacto</a>
         </nav>
-        <!-- .nav-menu -->
-    </header>
-    <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-        <div class="hero-container" style="cursor: context-menu">
-            <h1 class="neon" data-text="Maribella">Maribella</h1>
-            <br />
-            <h2>Soy una estilista profesional del estado de Querétaro</h2>
-            <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i
-        ></a>
+        <div class="actions">
+          <button class="btn btn-ghost" type="button" data-scroll="#contacto">Cotizar</button>
+          <button class="btn btn-primary" id="btnWhatsTop" type="button">WhatsApp</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left reveal">
+          <div class="badge"><span class="dot" aria-hidden="true"></span> Respuesta rápida • Atención por WhatsApp</div>
+
+          <!-- Pequeño toque dorado opcional en el H1 (puedes quitar el span si no lo quieres) -->
+          <h1><span class="accent">$1,000 a $10,000</span> <br/>en 12 semanas</h1>
+
+          <p class="lead">
+            Solicita tu crédito de forma sencilla. Elige tu monto, cotiza tu pago semanal y recibe atención inmediata por WhatsApp o déjanos tus datos.
+          </p>
+
+          <div class="hero-ctas">
+            <button class="btn btn-primary" id="btnWhatsHero" type="button">Solicitar por WhatsApp</button>
+            <button class="btn btn-ghost" type="button" data-scroll="#contacto">Llenar formulario</button>
+          </div>
+
+          <div class="hero-note">
+            <span class="pill">✅ Sin filas ni papeleo innecesario</span>
+            <span class="pill">✅ Pagos semanales (12 semanas)</span>
+            <span class="pill">✅ Atención inmediata</span>
+          </div>
+        </div>
+
+        <aside class="card reveal" aria-label="Calculadora">
+          <h3>Cotiza tu pago semanal</h3>
+          <p>Selecciona el monto (plazo fijo: 12 semanas).</p>
+
+          <div class="calc" id="calc">
+            <div class="row">
+              <label for="amount">
+                Monto
+                <span class="value" id="amountLabel">$5,000</span>
+              </label>
+              <input id="amount" type="range" min="1000" max="10000" step="100" value="5000" />
+            </div>
+
+            <div class="summary" role="group" aria-label="Resumen">
+              <div class="kpi"><b>Semanas</b><span id="weeksOut">12</span></div>
+              <div class="kpi"><b>Pago semanal</b><span id="weeklyOut">$600</span></div>
+              <div class="kpi"><b>Total estimado</b><span id="totalOut">$7,200</span></div>
+              <div class="legal">Sujeto a evaluación y aprobación. Condiciones pueden variar.</div>
+              <button class="btn btn-primary" id="btnWhatsCalc" type="button">Quiero este monto</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="pagos">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Pagos a 12 semanas</h2>
+          <p>Selecciona tu monto y revisa tu pago semanal.</p>
+        </div>
+
+        <div class="pay-grid">
+          <div class="card reveal">
+            <h3>Tabla de pagos</h3>
+            <p class="legal">Imagen referencial de pagos semanales.</p>
+
+            <a class="pay-img-wrap" href="assets/img/imgpagos.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Ver imagen de pagos">
+              <img class="pay-img" src="assets/img/imgpagos.jpeg" alt="Créditos a 12 semanas - tabla de pagos" />
+            </a>
+
+            <p class="legal" style="margin-top:10px;">Sujeto a evaluación y aprobación. Condiciones pueden variar.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Pago semanal</h3>
+            <p>Elige un monto para ver el pago. (12 semanas)</p>
+
+            <div class="pay-table-wrap" role="region" aria-label="Tabla de pagos a 12 semanas" tabindex="0">
+              <table class="pay-table">
+                <thead>
+                  <tr><th>Crédito</th><th>Pago semanal</th></tr>
+                </thead>
+                <tbody id="payRows"></tbody>
+              </table>
+            </div>
+
+            <div class="legal" style="margin-top:10px;">
+              Ejemplo: $1,000 → $120/semana • $10,000 → $1,200/semana
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- End Hero -->
 
-    <main id="main">
-        <!-- ======= About Me Section ======= -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-title" style="cursor: context-menu">
-                    <span>Sobre mi</span>
-                    <h2>Sobre mi</h2>
-                    <p>
-                        Sit sint consectetur velit quisquam cupiditate impedit suscipit alias
-                    </p>
-                </div>
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                        <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <ul>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Name:</strong> Laura Thomson
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Website:</strong> www.example.com
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Phone:</strong> +123 456 7890
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>City:</strong> City : New York, USA
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <ul>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Age:</strong> 30
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Degree:</strong> Master
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Email:</strong> email@example.com
-                                        </li>
-                                        <li>
-                                            <i class="icofont-rounded-right"></i>
-                                            <strong>Freelance:</strong> Available
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row mt-n4">
-                                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="icofont-simple-smile" style="color: #20b38e"></i>
-                                        <span data-toggle="counter-up">65</span>
-                                        <p>
-                                            <strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="icofont-document-folder" style="color: #8a1ac2"></i>
-                                        <span data-toggle="counter-up">85</span>
-                                        <p>
-                                            <strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="icofont-clock-time" style="color: #2cbdee"></i>
-                                        <span data-toggle="counter-up">12</span>
-                                        <p>
-                                            <strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="icofont-award" style="color: #ffb459"></i>
-                                        <span data-toggle="counter-up">15</span>
-                                        <p>
-                                            <strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End .content-->
-
-                        <div class="skills-content pl-lg-4">
-                            <div class="progress">
-                                <span class="skill">HTML <i class="val">100%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">CSS <i class="val">90%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">JavaScript <i class="val">75%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End About Me Section -->
-
-        <!-- ======= My Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-title" style="cursor: context-menu">
-                    <span>Servicios</span>
-                    <h2>Servicios</h2>
-                    <p>
-                        Sit sint consectetur velit quisquam cupiditate impedit suscipit alias
-                    </p>
-                </div>
-
-                <div class="row" style="cursor: context-menu">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a>Lorem Ipsum</a></h4>
-                            <p class="description">
-                                Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a>Sed ut perspiciatis</a></h4>
-                            <p class="description">
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a>Magni Dolores</a></h4>
-                            <p class="description">
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a>Nemo Enim</a></h4>
-                            <p class="description">
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br /><br /><br /><br /><br />
-        </section>
-        <!-- End My Services Section -->
-
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <div class="owl-carousel testimonials-carousel">
-                    <h4 class="d-flex justify-content-center" style="color: white">
-                        PRÓXIMAMENTE
-                    </h4>
-                    <!--
-                      <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-                        <h3>Saul Goodman</h3>
-                        <h4>Ceo &amp; Founder</h4>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus
-                            at semper.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam
-                            anim culpa.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
-                            labore illum veniam.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                            culpa fore nisi cillum quid.
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-                    -->
-                </div>
-            </div>
-        </section>
-        <!-- End Testimonials Section -->
-
-        <!-- ======= My Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-                <div class="section-title" style="cursor: context-menu">
-                    <span>Portafolio</span>
-                    <h2>Portafolio</h2>
-                    <p>PRÓXIMAMENTE...</p>
-                </div>
-                <!--
-  
-                <ul id="portfolio-flters" class="d-flex justify-content-center">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-web">Web</li>
-                </ul>
-
-                <div class="row portfolio-container">
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                            <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                            <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img">
-                            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i
-                ></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i
-                ></a>
-                        </div>
-                    </div>
-                </div>
--->
-            </div>
-        </section>
-        <!-- End My Portfolio Section -->
-
-        <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
-            <div class="container">
-                <div class="section-title" style="cursor: context-menu">
-                    <span>Precios</span>
-                    <h2>Precios</h2>
-                    <p>
-                        Sit sint consectetur velit quisquam cupiditate impedit suscipit alias
-                    </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="box">
-                            <h3>Hombre</h3>
-
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <!-- na class para rayar campo-->
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-                        <div class="box">
-                            <!-- featured class to spark-->
-                            <h3>Mujer</h3>
-
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                        <div class="box">
-                            <h3>Niño</h3>
-
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                        <div class="box">
-                            <!--<span class="advanced">Advanced</span>-->
-                            <h3>Niña</h3>
-
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Pricing Section -->
-
-        <!-- ======= Contact Me Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-title" style="cursor: context-menu">
-                    <span>Contacto</span>
-                    <h2>Contacto</h2>
-                    <p>
-                        Sit sint consectetur velit quisquam cupiditate impedit suscipit alias
-                    </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="row" style="cursor: context-menu">
-                            <div class="col-md-12">
-                                <div class="info-box">
-                                    <i class="bx bx-share-alt"></i>
-                                    <h3>Redes Sociales</h3>
-                                    <div class="social-links">
-                                        <a href="#" class="facebook"><i class="icofont-facebook"></i
-                      ></a>
-                                        <a href="#" class="instagram"><i class="icofont-instagram"></i
-                      ></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box mt-4">
-                                    <i class="bx bx-envelope"></i>
-                                    <h3>Correo</h3>
-                                    <p>contact@example.com</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box mt-4">
-                                    <i class="bx bx-phone-call"></i>
-                                    <h3>Llámame</h3>
-                                    <p>+1 5589 55488 55</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <form action="" method="post" id="form" role="form" class="php-email-form" onSubmit="sendEmail(document.getElementById('name').value,document.getElementById('email').value, document.getElementById('subject').value, document.getElementById('mensaje').value)">
-                            <div class="form-row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Ingrese al menos 4 caracteres" />
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" data-rule="email" data-msg="Ingrese un correo electrónico válido" />
-                                    <div class="validate"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Ingrese al menos 8 caracteres de asunto" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="mensaje" class="form-control" name="message" rows="6" data-rule="required" data-msg="Escriba su mensaje" placeholder="Mensaje"></textarea>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Cargando</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">
-                                    Your message has been sent. Thank you!
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit">Enviar Mensaje</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <br /><br />
-        </section>
-        <!-- End Contact Me Section -->
-    </main>
-    <!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="container">
-            <h3>Maribella</h3>
-            <p>
-                Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.
-            </p>
-            <div class="social-links">
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            </div>
-            <div class="copyright">
-                &copy; Copyright <strong><span>Maribella</span></strong
-          >. All Rights Reserved
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Cómo funciona</h2>
         </div>
-        <div class="credits">
-          Designed by
-          <a href="https://www.facebook.com/ExpertiseEntropy/" target="_blank"
-            >Expertise Entropy</a
-          >
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">1</div>
+            <div>
+              <b>Elige tu monto</b>
+              <p class="lead" style="margin:6px 0 0;">Del $1,000 al $10,000. Plazo fijo 12 semanas.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="num">2</div>
+            <div>
+              <b>Envíanos tu solicitud</b>
+              <p class="lead" style="margin:6px 0 0;">WhatsApp o formulario (lo que te convenga).</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="num">3</div>
+            <div>
+              <b>Validación y oferta</b>
+              <p class="lead" style="margin:6px 0 0;">Te contactamos con los requisitos y la oferta final.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Claro y sencillo, <span class="accent">inicia tu solicitud</span> con nosotros</h2>
+          <p>Información clara, cotización rápida y contacto directo para iniciar tu solicitud en minutos.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="feature reveal">
+            <div class="icon" aria-hidden="true">⚡</div>
+            <h4>Mensaje simple</h4>
+            <p>“$1,000 a $10,000 en 12 semanas” sin letras chiquitas escondidas.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon" aria-hidden="true">🧮</div>
+            <h4>Cotizador rápido</h4>
+            <p>Slider de monto + CTA directo a WhatsApp con el monto precargado.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon" aria-hidden="true">📱</div>
+            <h4>Atención rápida</h4>
+            <p>Inicia tu solicitud por WhatsApp y continúa cuando te convenga.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Preguntas frecuentes</h2>
+          <p>Resuelve tus dudas.</p>
+        </div>
+
+        <div class="faq" id="faq">
+          <details class="reveal">
+            <summary>¿Cuánto tarda el proceso? <span class="chev">▾</span></summary>
+            <div class="faq-anim">
+              <div class="faq-content">
+                Depende de tu información y validación. El inicio puede hacerse en minutos.
+              </div>
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>¿El pago semanal es exacto? <span class="chev">▾</span></summary>
+            <div class="faq-anim">
+              <div class="faq-content">
+                Es una referencia. La oferta final puede variar por evaluación, comisiones, intereses y condiciones.
+              </div>
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>¿Puedo pagar antes? <span class="chev">▾</span></summary>
+            <div class="faq-anim">
+              <div class="faq-content">
+                Depende de las condiciones aplicables. Si cuentas con pagos anticipados, aquí se confirma al validar tu solicitud.
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Contacto</h2>
+        </div>
+
+        <div class="contact">
+          <div class="card reveal">
+            <h3>Escríbenos por WhatsApp</h3>
+            <p>Te abrimos un chat con el monto seleccionado y tu mensaje.</p>
+            <button class="btn btn-primary" id="btnWhatsContact" type="button">Abrir WhatsApp</button>
+            <p class="legal" style="margin-top:10px;">Horario de atención (ejemplo): L–V 9:00 a 18:00.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>O deja tus datos</h3>
+            <p>Déjanos tus datos y te contactamos. También puedes solicitar directamente por WhatsApp.</p>
+
+            <form id="leadForm">
+              <div class="field">
+                <label for="name">Nombre</label>
+                <input id="name" name="name" required placeholder="Tu nombre" />
+              </div>
+
+              <div class="field" style="margin-top:10px;">
+                <label for="phone">Teléfono</label>
+                <input id="phone" name="phone" required placeholder="10 dígitos" inputmode="tel" />
+              </div>
+
+              <div class="field" style="margin-top:10px;">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Quiero un crédito de $____ y pagar en 12 semanas."></textarea>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                <button class="btn btn-ghost" id="btnFormToWhats" type="button">Enviar por WhatsApp</button>
+              </div>
+
+              <p class="legal" style="margin-top:10px;">
+                Al enviar aceptas nuestro <a href="#aviso" style="text-decoration:underline;">Aviso de privacidad</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div id="aviso" class="legal reveal" style="margin-top:14px;">
+          <b>Aviso rápido (ejemplo):</b> Este sitio es informativo. La aprobación está sujeta a evaluación.
+          Ajusta aquí tu aviso de privacidad, términos, etc.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div><b>Zeffata</b> — Créditos semanales</div>
+          <div>© <span id="year"></span> Todos los derechos reservados.</div>
+          <div class="legal">Consulta términos y aviso de privacidad. Sujeto a evaluación y aprobación.</div>
         </div>
       </div>
     </footer>
-    <!-- End Footer -->
 
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <div class="fab">
+      <button class="btn btn-primary" id="btnFab" type="button">WhatsApp</button>
+    </div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-  </body>
+  <script>
+    // ==========================
+    // CONFIG
+    // ==========================
+    const WHATSAPP_NUMBER = "5214421104486"; // <-- cambia esto
+    const FORMSPREE_ENDPOINT = ""; // opcional: "https://formspree.io/f/XXXXXX"
+
+    // ==========================
+    // Helpers
+    // ==========================
+    const $ = (q, el=document) => el.querySelector(q);
+    const money = (n) => n.toLocaleString("es-MX", { style:"currency", currency:"MXN", maximumFractionDigits:0 });
+
+    function toast(msg){
+      const t = $("#toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>t.classList.remove("show"), 2800);
+    }
+
+    function openWhatsApp({ amount, name, phone, message } = {}){
+      const a = amount ? `Monto: ${money(amount)}` : "";
+      const n = name ? `Nombre: ${name}` : "";
+      const p = phone ? `Tel: ${phone}` : "";
+      const m = message ? `Mensaje: ${message}` : "";
+      const base = ["Hola, me interesa un crédito en 12 semanas.", a, n, p, m].filter(Boolean).join("\n");
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(base)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    // ==========================
+    // Smooth scroll (links + botones)
+    // ==========================
+    function scrollToTarget(selector){
+      const target = document.querySelector(selector);
+      if(!target) return;
+
+      const header = document.querySelector(".topbar");
+      const headerH = header ? header.offsetHeight : 0;
+
+      const top = target.getBoundingClientRect().top + window.pageYOffset - (headerH + 14);
+
+      const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      window.scrollTo({ top, behavior: reduced ? "auto" : "smooth" });
+
+      setTimeout(()=>{
+        target.classList.remove("target-flash");
+        void target.offsetWidth;
+        target.classList.add("target-flash");
+      }, reduced ? 0 : 450);
+    }
+
+    document.addEventListener("click", (e)=>{
+      const a = e.target.closest('a[href^="#"]');
+      if(a && a.getAttribute("href").length > 1){
+        e.preventDefault();
+        scrollToTarget(a.getAttribute("href"));
+      }
+
+      const btn = e.target.closest("[data-scroll]");
+      if(btn){
+        e.preventDefault();
+        scrollToTarget(btn.getAttribute("data-scroll"));
+      }
+    });
+
+    // ==========================
+    // Reveal on scroll
+    // ==========================
+    const revealEls = Array.from(document.querySelectorAll(".reveal"));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el=>io.observe(el));
+
+    // ==========================
+    // Pay table
+    // ==========================
+    const PAY_AMOUNTS = [1000,1500,2000,2500,3000,3500,4000,4500,5000,6000,7000,8000,9000,10000];
+
+    function renderPayTable(){
+      const tbody = document.getElementById("payRows");
+      if(!tbody) return;
+
+      tbody.innerHTML = PAY_AMOUNTS.map(a=>{
+        const weekly = Math.round(a * 0.12);
+        return `
+          <tr data-amount="${a}">
+            <td>${money(a)}</td>
+            <td>${money(weekly)}</td>
+          </tr>
+        `;
+      }).join("");
+
+      tbody.addEventListener("click", (e)=>{
+        const tr = e.target.closest("tr[data-amount]");
+        if(!tr) return;
+        const a = Number(tr.getAttribute("data-amount"));
+        amount.value = a;
+        updateCalc();
+      });
+    }
+
+    function highlightPayRow(amount){
+      const rows = document.querySelectorAll('#payRows tr');
+      rows.forEach(r=>r.classList.remove("active"));
+      const active = document.querySelector(`#payRows tr[data-amount="${amount}"]`);
+      if(active) active.classList.add("active");
+    }
+
+    // ==========================
+    // Calculator
+    // ==========================
+    const amount = $("#amount");
+    const amountLabel = $("#amountLabel");
+    const weeks = 12;
+
+    function updateCalc(){
+      const val = Number(amount.value);
+      amountLabel.textContent = money(val);
+      $("#weeksOut").textContent = weeks;
+
+      const weekly = Math.round(val * 0.12);
+      const total = weekly * weeks;
+
+      $("#weeklyOut").textContent = money(weekly);
+      $("#totalOut").textContent = money(total);
+
+      highlightPayRow(val);
+      return { val, weekly, total };
+    }
+
+    renderPayTable();
+    updateCalc();
+    amount.addEventListener("input", updateCalc);
+
+    // ==========================
+    // WhatsApp buttons
+    // ==========================
+    function whatsFromCalc(){
+      const { val } = updateCalc();
+      openWhatsApp({ amount: val, message: `Quiero cotizar ${money(val)} a 12 semanas.` });
+    }
+
+    $("#btnWhatsTop").addEventListener("click", () => openWhatsApp());
+    $("#btnWhatsHero").addEventListener("click", () => openWhatsApp());
+    $("#btnWhatsCalc").addEventListener("click", whatsFromCalc);
+    $("#btnWhatsContact").addEventListener("click", whatsFromCalc);
+    $("#btnFab").addEventListener("click", whatsFromCalc);
+
+    // ==========================
+    // Form submit (Formspree optional)
+    // ==========================
+    $("#btnFormToWhats").addEventListener("click", ()=>{
+      const { val } = updateCalc();
+      openWhatsApp({
+        amount: val,
+        name: $("#name").value.trim(),
+        phone: $("#phone").value.trim(),
+        message: $("#message").value.trim()
+      });
+    });
+
+    $("#leadForm").addEventListener("submit", async (e)=>{
+      e.preventDefault();
+
+      const payload = {
+        name: $("#name").value.trim(),
+        phone: $("#phone").value.trim(),
+        message: $("#message").value.trim(),
+        amount: Number($("#amount").value),
+        weeks
+      };
+
+      if(!payload.name || !payload.phone){
+        toast("Completa nombre y teléfono.");
+        return;
+      }
+
+      if(!FORMSPREE_ENDPOINT){
+        openWhatsApp(payload);
+        toast("Listo. Te abrimos WhatsApp.");
+        return;
+      }
+
+      try{
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type":"application/json", "Accept":"application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if(res.ok){
+          e.target.reset();
+          toast("Enviado. Te contactaremos pronto.");
+        }else{
+          openWhatsApp(payload);
+          toast("No se pudo enviar. Te abrimos WhatsApp.");
+        }
+      }catch(err){
+        openWhatsApp(payload);
+        toast("Error de red. Te abrimos WhatsApp.");
+      }
+    });
+
+    // ==========================
+    // FAQ animation (smooth open/close)
+    // ==========================
+    const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function setFaqHeights(openingDetails){
+      document.querySelectorAll("details .faq-anim").forEach(anim=>{
+        const d = anim.closest("details");
+        if(!d) return;
+        if(d.open){
+          const content = anim.firstElementChild;
+          const h = content ? content.scrollHeight : 0;
+          anim.style.height = reducedMotion ? "auto" : (h + "px");
+        }else{
+          anim.style.height = "0px";
+        }
+      });
+
+      if(openingDetails){
+        const anim = openingDetails.querySelector(".faq-anim");
+        if(anim && !reducedMotion){
+          const content = anim.firstElementChild;
+          const h = content ? content.scrollHeight : 0;
+          anim.style.height = h + "px";
+        }
+      }
+    }
+
+    setFaqHeights();
+
+    document.querySelectorAll("#faq details").forEach(d=>{
+      d.addEventListener("toggle", ()=>{
+        if(d.open){
+          document.querySelectorAll("#faq details").forEach(other=>{
+            if(other !== d) other.open = false;
+          });
+        }
+        setFaqHeights(d.open ? d : null);
+      });
+    });
+
+    window.addEventListener("resize", ()=>{
+      if(reducedMotion) return;
+      setFaqHeights();
+    });
+
+    $("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
