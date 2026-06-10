@@ -1,0 +1,15 @@
+export const stack = [
+  'Laravel',
+  'React',
+  'React Native',
+  'Expo',
+  'Electron',
+  'TypeScript',
+  'SQLite',
+  'MySQL',
+  'PostgreSQL / Supabase',
+  'APIs REST',
+  'Python / OCR',
+  'GitHub',
+  'AI-assisted development workflows',
+];
